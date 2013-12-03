@@ -1,0 +1,21 @@
+	t=-5:0.1:5;
+	P=[0.6,-0.3]; Q = [-0.6,-0.3];
+	y1 = P(1)*sin(t)-P(2)*cos(t);
+	y2 = Q(1)*sin(t)-Q(2)*cos(t);
+	den1 = sqrt((cos(t)-P(1)).^2+(sin(t)-P(2)).^2);
+	den2 = sqrt((cos(t)-Q(1)).^2+(sin(t)-Q(2)).^2);
+	y1 = y1./den1;
+	y2 = y2./den2;
+	y = y1 + y2;
+	clf();
+	plot(t,y)
+	set (gca, 'xaxislocation', 'zero');
+	set (gca, 'yaxislocation', 'zero');
+	set(gca, 'box', 'off');
+	grid;
+	title('La Funcion');
+ 	legend({f},'location','southoutside');
+ 	legend boxon;
+ 	xlabel('y');
+ 	ylabel('x');
+ 	set (get (gca, 'ylabel'), 'rotation', 360);
